@@ -95,15 +95,19 @@ canvas2.add(triangle);
 $("#changeColor").on("click", function(){
     rect.set("fill", () => rect.get("fill") === "red" ? "blue" : "red");
     triangle.set("fill", () => triangle.get("fill") === "red" ? "blue" : "red" )
-
     canvas2.add(rect);
     canvas2.add(triangle);
 })
 
 $("#getPos").on("click", () => {
     $("#triangle_left").text(triangle.get("left"))
-}
-)
+});
+
+$("#animate").on("click", () => {
+    rect.animate("angle", rect.get("angle") + 45, {
+        onChange: canvas2.renderAll.bind(canvas2)
+    })
+});
 
 $("#randomPos").on("click", () => {
     rect.set("top", () => Math.random()*20 + Math.random()* 50);
@@ -142,6 +146,7 @@ fabric.Image.fromURL(src, (oImg) => {
         let angle = oImg.get("angle");
         oImg.set("angle", angle + 10);
         imageCanvas.add(oImg);
+        
     });
 
     $("#my_image_canvas_rotate_left").on("click", () => {
@@ -175,3 +180,9 @@ fabric.Image.fromURL(src, (oImg) => {
     top: 50
 })
 
+//path
+
+var pathCanvas = new fabric.Canvas("my_path");
+var path = new fabric.Path("M 0 0 L 100 100 L 0 100 z");
+path.set({fill: "red"})
+pathCanvas.add(path);

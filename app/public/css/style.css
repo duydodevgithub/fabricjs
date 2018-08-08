@@ -6,10 +6,19 @@
     border: 2px dashed black;
 }
 
+#my_path {
+    border: 2px dashed black;
+}
+
 #my_image_canvas {
     border: 2px dashed black;
 }
 
 button {
     margin: 10px;
+}
+
+button:hover {
+    background-color: #4CAF50;
+    color: white;
 }
