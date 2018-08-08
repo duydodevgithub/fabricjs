@@ -1,0 +1,15 @@
+#mycanvas {
+    border: 2px dotted black;
+}
+
+#mycanvas2 {
+    border: 2px dashed black;
+}
+
+#my_image_canvas {
+    border: 2px dashed black;
+}
+
+button {
+    margin: 10px;
+}
