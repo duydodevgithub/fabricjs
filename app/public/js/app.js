@@ -138,14 +138,40 @@ fabric.Image.fromURL(src, (oImg) => {
         imageCanvas.add(oImg);
     });
 
-    $("#my_image_canvas_angle").on("click", () => {
+    $("#my_image_canvas_rotate_right").on("click", () => {
         let angle = oImg.get("angle");
         oImg.set("angle", angle + 10);
         imageCanvas.add(oImg);
     });
+
+    $("#my_image_canvas_rotate_left").on("click", () => {
+        let angle = oImg.get("angle");
+        oImg.set("angle", angle - 10);
+        imageCanvas.add(oImg);
+    });
+
+    $("#my_image_canvas_zoom_in").on("click", () => {
+        let scaleX = oImg.get("scaleX");
+        let scaleY = oImg.get("scaleY");
+        oImg.set("scaleX", scaleX + 0.1);
+        oImg.set("scaleY", scaleY + 0.1);
+        imageCanvas.add(oImg);
+    });
+
+    $("#my_image_canvas_zoom_out").on("click", () => {
+        let scaleX = oImg.get("scaleX");
+        let scaleY = oImg.get("scaleY");
+        oImg.set("scaleX", scaleX - 0.1);
+        oImg.set("scaleY", scaleY - 0.1);
+        imageCanvas.add(oImg);
+    });
+
+    $("#my_image_canvas_reset").on("click", () => {
+        oImg.set({left: 160, top: 50, angle: 0, scaleX: 1, scaleY: 1});
+        imageCanvas.add(oImg);
+    });
 },{
-    left: 130,
-    top: 50,
-    angle: 20
+    left: 160,
+    top: 50
 })
 
