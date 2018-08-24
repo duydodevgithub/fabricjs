@@ -17,8 +17,9 @@
   },
   "homepage": "https://github.com/duydodevgithub/fabricjs#readme",
   "dependencies": {
+    "canvas": "^1.6.11",
     "express": "^4.16.3",
-    "fabric": "^2.3.4",
+    "fabric": "^2.3.6",
     "path": "^0.12.7"
   }
 }
